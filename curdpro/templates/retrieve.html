@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Retrieving Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: silver">
+    <h1>Product Details Are</h1>
+<table border="2px" class="table table-striped">
+    {% if data %}
+        <thead>
+        <tr>
+            <th>product id</th>
+            <th>product name</th>
+            <th>product cost</th>
+            <th>product class</th>
+            <th>product color</th>
+            <th>customer name</th>
+            <th>customer mobile</th>
+            <th>customer email</th>
+        </tr>
+        </thead>
+        {% for i in data %}
+        <tbody>
+        <tr>
+            <td>{{ i.product_id }}</td>
+            <td>{{ i.product_name }}</td>
+            <td>{{ i.product_cost }}</td>
+            <td>{{ i.product_class }}</td>
+            <td>{{ i.product_color }}</td>
+            <td>{{ i.customer_name }}</td>
+            <td>{{ i.customer_mobile }}</td>
+            <td>{{ i.customer_email }}</td>
+
+        </tr>
+        {% endfor  %}
+        </table>
+        <center><a href="/#/">Goto Main Page</a></center>
+
+        </tbody>
+
+    {% else %}
+        <h2>Data is not Available</h2>
+    {% endif %}
+</body>
+</html>
